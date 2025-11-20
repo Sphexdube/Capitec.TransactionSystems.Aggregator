@@ -1,0 +1,75 @@
+{
+  "DataSource": {
+    "Id": "d4e5f6a7-b8c9-0123-def0-456789012def",
+    "Name": "SnapScan",
+    "Type": "PaymentApp",
+    "LinkedCard": "****5678"
+  },
+  "CustomerId": "CUST001",
+  "SyncDate": "2025-11-16T10:10:00Z",
+  "Transactions": [
+    {
+      "Id": "c9d0e1f2-3456-7890-0123-890123456012",
+      "ExternalTransactionId": "SNAP-20251116-001",
+      "TransactionDate": "2025-11-11T08:15:00Z",
+      "ProcessedDate": "2025-11-11T08:15:02Z",
+      "Description": "Coffee Shop - Vida e Caffe",
+      "MerchantName": "Vida e Caffe Menlyn",
+      "Amount": -65.00,
+      "CurrencyCode": "ZAR",
+      "Type": "Debit",
+      "Status": "Cleared",
+      "Category": "Dining",
+      "Tags": [
+        { "Key": "MerchantType", "Value": "Cafe" },
+        { "Key": "PaymentMethod", "Value": "QRCode" }
+      ],
+      "Metadata": {
+        "QRCodeId": "VID-MEN-012345",
+        "ItemDescription": "Cappuccino + Muffin"
+      }
+    },
+    {
+      "Id": "d0e1f2a3-4567-8901-1234-901234567123",
+      "ExternalTransactionId": "SNAP-20251116-002",
+      "TransactionDate": "2025-11-12T12:45:00Z",
+      "ProcessedDate": "2025-11-12T12:45:01Z",
+      "Description": "Fast Food - KFC",
+      "MerchantName": "KFC Centurion",
+      "Amount": -89.90,
+      "CurrencyCode": "ZAR",
+      "Type": "Debit",
+      "Status": "Cleared",
+      "Category": "Dining",
+      "Tags": [
+        { "Key": "MerchantType", "Value": "FastFood" },
+        { "Key": "OrderType", "Value": "TakeAway" }
+      ],
+      "Metadata": {
+        "OrderNumber": "KFC-25111201234",
+        "Store": "Centurion Mall"
+      }
+    },
+    {
+      "Id": "e1f2a3b4-5678-9012-2345-012345678234",
+      "ExternalTransactionId": "SNAP-20251116-003",
+      "TransactionDate": "2025-11-13T18:00:00Z",
+      "ProcessedDate": "2025-11-13T18:00:01Z",
+      "Description": "Pharmacy - Clicks",
+      "MerchantName": "Clicks Pharmacy Centurion",
+      "Amount": -325.50,
+      "CurrencyCode": "ZAR",
+      "Type": "Debit",
+      "Status": "Cleared",
+      "Category": "Healthcare",
+      "Tags": [
+        { "Key": "StoreType", "Value": "Pharmacy" },
+        { "Key": "ClubCard", "Value": "Used" }
+      ],
+      "Metadata": {
+        "ClubCardNumber": "****1234",
+        "PointsEarned": "32"
+      }
+    }
+  ]
+}

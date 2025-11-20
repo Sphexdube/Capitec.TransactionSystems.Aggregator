@@ -1,0 +1,103 @@
+erDiagram
+    tblCustomer {
+        uniqueidentifier Id PK
+        nvarchar(100) FirstName
+        nvarchar(100) LastName
+        nvarchar(255) Email "UNIQUE"
+        nvarchar(20) PhoneNumber "nullable"
+        datetimeoffset CreatedAt
+        datetimeoffset ModifiedAt "nullable"
+        rowversion RowVersion
+    }
+
+    tblDataSource {
+        uniqueidentifier Id PK
+        nvarchar(100) Name
+        nvarchar(50) DataSourceType
+        nvarchar(500) Description "nullable"
+        nvarchar(255) LogoUrl "nullable"
+        bit IsActive
+        datetimeoffset CreatedAt
+        datetimeoffset ModifiedAt "nullable"
+        rowversion RowVersion
+    }
+
+    tblTransactionCategory {
+        uniqueidentifier Id PK
+        nvarchar(100) Name
+        nvarchar(500) Description "nullable"
+        nvarchar(50) IconName "nullable"
+        nvarchar(7) ColorCode "nullable"
+        uniqueidentifier ParentCategoryId "nullable, FK"
+        datetimeoffset CreatedAt
+        datetimeoffset ModifiedAt "nullable"
+        rowversion RowVersion
+    }
+
+    tblPaymentMethod {
+        uniqueidentifier Id PK
+        nvarchar(100) Name
+        nvarchar(50) PaymentMethodType
+        nvarchar(500) Description "nullable"
+        datetimeoffset CreatedAt
+        datetimeoffset ModifiedAt "nullable"
+        rowversion RowVersion
+    }
+
+    tblCustomerDataSource {
+        uniqueidentifier Id PK
+        uniqueidentifier CustomerId FK
+        uniqueidentifier DataSourceId FK
+        nvarchar(50) AccountNumber "nullable"
+        nvarchar(200) AccountName "nullable"
+        bit IsConnected
+        datetimeoffset ConnectedDate
+        datetimeoffset LastSyncDate "nullable"
+        datetimeoffset CreatedAt
+        datetimeoffset ModifiedAt "nullable"
+        rowversion RowVersion
+    }
+
+    tblTransaction {
+        uniqueidentifier Id PK
+        uniqueidentifier CustomerId FK
+        uniqueidentifier DataSourceId FK
+        uniqueidentifier CategoryId "nullable, FK"
+        uniqueidentifier PaymentMethodId "nullable, FK"
+        nvarchar(100) ExternalTransactionId "nullable"
+        nvarchar(200) MerchantName
+        nvarchar(500) Description "nullable"
+        decimal(18,2) Amount
+        nvarchar(3) Currency
+        datetimeoffset TransactionDate
+        datetimeoffset PostedDate "nullable"
+        nvarchar(50) TransactionType
+        nvarchar(50) TransactionStatus
+        bit IsRecurring
+        nvarchar(max) Tags "nullable, JSON"
+        datetimeoffset CreatedAt
+        datetimeoffset ModifiedAt "nullable"
+        rowversion RowVersion
+    }
+
+    tblTransactionReversal {
+        uniqueidentifier Id PK
+        uniqueidentifier OriginalTransactionId FK
+        uniqueidentifier ReversalTransactionId FK
+        nvarchar(500) Reason "nullable"
+        datetimeoffset ReversalDate
+        datetimeoffset CreatedAt
+        datetimeoffset ModifiedAt "nullable"
+        rowversion RowVersion
+    }
+
+    %% Relationships
+    tblCustomer ||--o{ tblCustomerDataSource : "connects to data sources"
+    tblDataSource ||--o{ tblCustomerDataSource : "connected by customers"
+    tblCustomer ||--o{ tblTransaction : "has transactions"
+    tblDataSource ||--o{ tblTransaction : "sources transactions"
+    tblTransactionCategory ||--o{ tblTransaction : "categorizes transactions"
+    tblTransactionCategory ||--o{ tblTransactionCategory : "has sub-categories"
+    tblPaymentMethod ||--o{ tblTransaction : "payment method used"
+    tblTransaction ||--o{ tblTransactionReversal : "original transaction reversed"
+    tblTransaction ||--o{ tblTransactionReversal : "reversal transaction"

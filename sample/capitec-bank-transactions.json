@@ -1,0 +1,120 @@
+{
+  "DataSource": {
+    "Id": "a1b2c3d4-e5f6-7890-abcd-1234567890ab",
+    "Name": "Capitec Bank",
+    "Type": "Bank",
+    "AccountNumber": "****5678"
+  },
+  "CustomerId": "CUST001",
+  "SyncDate": "2025-11-16T10:00:00Z",
+  "Transactions": [
+    {
+      "Id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+      "ExternalTransactionId": "CAP-TXN-20251116-001",
+      "TransactionDate": "2025-11-10T09:30:00Z",
+      "ProcessedDate": "2025-11-10T09:30:05Z",
+      "Description": "Salary Deposit",
+      "MerchantName": "ABC Company (Pty) Ltd",
+      "Amount": 28500.00,
+      "CurrencyCode": "ZAR",
+      "Type": "Credit",
+      "Status": "Cleared",
+      "Category": "Income",
+      "Tags": [
+        { "Key": "PaymentType", "Value": "Salary" },
+        { "Key": "Source", "Value": "DirectDeposit" }
+      ],
+      "Metadata": {
+        "Reference": "SAL-2025-11",
+        "BankReference": "FT25111000123456"
+      }
+    },
+    {
+      "Id": "d96cbaec-0612-49cd-b896-5422e7271ed8",
+      "ExternalTransactionId": "CAP-TXN-20251116-002",
+      "TransactionDate": "2025-11-11T14:22:00Z",
+      "ProcessedDate": "2025-11-11T14:22:03Z",
+      "Description": "POS Purchase - Checkers Hyper",
+      "MerchantName": "Checkers Hyper Centurion",
+      "Amount": -1285.50,
+      "CurrencyCode": "ZAR",
+      "Type": "Debit",
+      "Status": "Posted",
+      "Category": "Groceries",
+      "Tags": [
+        { "Key": "PaymentMethod", "Value": "DebitCard" },
+        { "Key": "CardLastFour", "Value": "5678" }
+      ],
+      "Metadata": {
+        "MerchantCategory": "5411",
+        "Terminal": "POS-CHK-CTN-012",
+        "AuthCode": "AUTH789123"
+      }
+    },
+    {
+      "Id": "1d5b7d52-b327-4f0f-8dc9-bd0c29e2f72f",
+      "ExternalTransactionId": "CAP-TXN-20251116-003",
+      "TransactionDate": "2025-11-12T18:45:00Z",
+      "ProcessedDate": "2025-11-12T18:45:02Z",
+      "Description": "Online Transfer - Rent Payment",
+      "MerchantName": "Property Management Services",
+      "Amount": -8500.00,
+      "CurrencyCode": "ZAR",
+      "Type": "Debit",
+      "Status": "Cleared",
+      "Category": "Housing",
+      "Tags": [
+        { "Key": "TransferType", "Value": "OnlineBanking" },
+        { "Key": "BeneficiaryName", "Value": "PMS (Pty) Ltd" }
+      ],
+      "Metadata": {
+        "Reference": "RENT-NOV-2025",
+        "BeneficiaryAccount": "****7890"
+      }
+    },
+    {
+      "Id": "a1c2d3e4-f5b6-7890-abcd-1234567890ef",
+      "ExternalTransactionId": "CAP-TXN-20251116-004",
+      "TransactionDate": "2025-11-13T12:10:00Z",
+      "ProcessedDate": "2025-11-13T12:10:01Z",
+      "Description": "Fuel Purchase - Shell",
+      "MerchantName": "Shell Centurion Mall",
+      "Amount": -750.00,
+      "CurrencyCode": "ZAR",
+      "Type": "Debit",
+      "Status": "Posted",
+      "Category": "Transport",
+      "Tags": [
+        { "Key": "PaymentMethod", "Value": "DebitCard" },
+        { "Key": "FuelType", "Value": "Unleaded95" }
+      ],
+      "Metadata": {
+        "Litres": "50",
+        "PricePerLitre": "15.00",
+        "PumpNumber": "05"
+      }
+    },
+    {
+      "Id": "b2c3d4e5-f6a7-8901-bcde-234567890abc",
+      "ExternalTransactionId": "CAP-TXN-20251116-005",
+      "TransactionDate": "2025-11-14T19:30:00Z",
+      "ProcessedDate": "2025-11-14T19:30:04Z",
+      "Description": "Restaurant Payment - Ocean Basket",
+      "MerchantName": "Ocean Basket Menlyn",
+      "Amount": -485.00,
+      "CurrencyCode": "ZAR",
+      "Type": "Debit",
+      "Status": "Posted",
+      "Category": "Dining",
+      "Tags": [
+        { "Key": "PaymentMethod", "Value": "DebitCard" },
+        { "Key": "DiningType", "Value": "Casual" }
+      ],
+      "Metadata": {
+        "TableNumber": "12",
+        "ServerName": "Sarah",
+        "TipIncluded": "false"
+      }
+    }
+  ]
+}

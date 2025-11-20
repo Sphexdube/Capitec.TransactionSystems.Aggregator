@@ -1,0 +1,98 @@
+{
+  "DataSource": {
+    "Id": "c3d4e5f6-a7b8-9012-cdef-345678901bcd",
+    "Name": "Standard Bank Credit Card",
+    "Type": "CreditCard",
+    "CardNumber": "****4321",
+    "CardBrand": "Visa"
+  },
+  "CustomerId": "CUST001",
+  "SyncDate": "2025-11-16T10:05:00Z",
+  "Transactions": [
+    {
+      "Id": "e5f6a7b8-9012-3456-cdef-456789012cde",
+      "ExternalTransactionId": "SB-CC-20251116-001",
+      "TransactionDate": "2025-11-11T15:30:00Z",
+      "ProcessedDate": "2025-11-12T08:00:00Z",
+      "Description": "Online Purchase - Takealot",
+      "MerchantName": "Takealot.com",
+      "Amount": -1299.00,
+      "CurrencyCode": "ZAR",
+      "Type": "Debit",
+      "Status": "Posted",
+      "Category": "Shopping",
+      "Tags": [
+        { "Key": "TransactionType", "Value": "OnlinePurchase" },
+        { "Key": "Merchant", "Value": "ECommerce" }
+      ],
+      "Metadata": {
+        "OrderNumber": "TKL-2025-111567",
+        "ShippingAddress": "123 Main Rd, Centurion"
+      }
+    },
+    {
+      "Id": "f6a7b8c9-0123-4567-def0-567890123def",
+      "ExternalTransactionId": "SB-CC-20251116-002",
+      "TransactionDate": "2025-11-12T20:15:00Z",
+      "ProcessedDate": "2025-11-13T08:00:00Z",
+      "Description": "Subscription - Netflix",
+      "MerchantName": "Netflix International",
+      "Amount": -199.00,
+      "CurrencyCode": "ZAR",
+      "Type": "Debit",
+      "Status": "Posted",
+      "Category": "Entertainment",
+      "Tags": [
+        { "Key": "SubscriptionType", "Value": "Streaming" },
+        { "Key": "BillingCycle", "Value": "Monthly" }
+      ],
+      "Metadata": {
+        "PlanType": "Premium",
+        "RenewalDate": "2025-12-12"
+      }
+    },
+    {
+      "Id": "a7b8c9d0-1234-5678-ef01-678901234ef0",
+      "ExternalTransactionId": "SB-CC-20251116-003",
+      "TransactionDate": "2025-11-13T16:45:00Z",
+      "ProcessedDate": "2025-11-14T08:00:00Z",
+      "Description": "Clothing Store - Edgars",
+      "MerchantName": "Edgars Menlyn Park",
+      "Amount": -2150.00,
+      "CurrencyCode": "ZAR",
+      "Type": "Debit",
+      "Status": "Posted",
+      "Category": "Shopping",
+      "Tags": [
+        { "Key": "StoreType", "Value": "Retail" },
+        { "Key": "Department", "Value": "Clothing" }
+      ],
+      "Metadata": {
+        "StoreNumber": "EDG-123",
+        "LoyaltyPointsEarned": "215"
+      }
+    },
+    {
+      "Id": "b8c9d0e1-2345-6789-f012-789012345f01",
+      "ExternalTransactionId": "SB-CC-20251116-004",
+      "TransactionDate": "2025-11-14T11:20:00Z",
+      "ProcessedDate": "2025-11-15T08:00:00Z",
+      "Description": "Utility Bill - Electricity",
+      "MerchantName": "City Power Pretoria",
+      "Amount": -1850.00,
+      "CurrencyCode": "ZAR",
+      "Type": "Debit",
+      "Status": "Cleared",
+      "Category": "Utilities",
+      "Tags": [
+        { "Key": "UtilityType", "Value": "Electricity" },
+        { "Key": "BillingPeriod", "Value": "October 2025" }
+      ],
+      "Metadata": {
+        "MeterNumber": "MTR-456789",
+        "Units": "450",
+        "AccountNumber": "ACCT-987654"
+      }
+    }
+  ]
+}
