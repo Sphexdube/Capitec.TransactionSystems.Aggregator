@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\TransactionSystems.Aggregator.Application.Models\TransactionSystems.Aggregator.Application.Models.csproj" />
+    <ProjectReference Include="..\TransactionSystems.Aggregator.Domain.Observability\TransactionSystems.Aggregator.Domain.Observability.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,20 @@
+CREATE TABLE tblCustomerDataSource
+(
+	[Id] UNIQUEIDENTIFIER NOT NULL,
+	[CustomerId] UNIQUEIDENTIFIER NOT NULL,
+	[DataSourceId] UNIQUEIDENTIFIER NOT NULL,
+	[AccountNumber] NVARCHAR(50) NULL,
+	[AccountName] NVARCHAR(200) NULL,
+	[IsConnected] BIT NOT NULL,
+	[ConnectedDate] DATETIMEOFFSET NOT NULL,
+	[LastSyncDate] DATETIMEOFFSET NULL,
+	[CreatedAt] DATETIMEOFFSET NOT NULL,
+	[ModifiedAt] DATETIMEOFFSET NULL,
+	[ArchivedAt] DATETIMEOFFSET NOT NULL DEFAULT SYSDATETIMEOFFSET(),
+
+	CONSTRAINT PK_CustomerDataSource PRIMARY KEY (Id),
+
+	INDEX IX_CustomerDataSource_CustomerId NONCLUSTERED (CustomerId),
+	INDEX IX_CustomerDataSource_DataSourceId NONCLUSTERED (DataSourceId),
+	INDEX IX_CustomerDataSource_ArchivedAt NONCLUSTERED (ArchivedAt)
+)

@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TransactionSystems.Aggregator.Application.Events\TransactionSystems.Aggregator.Application.Events.csproj" />
+    <ProjectReference Include="..\TransactionSystems.Aggregator.Application.Models\TransactionSystems.Aggregator.Application.Models.csproj" />
+    <ProjectReference Include="..\TransactionSystems.Aggregator.Domain.Entities\TransactionSystems.Aggregator.Domain.Entities.csproj" />
+    <ProjectReference Include="..\TransactionSystems.Aggregator.Domain.Interfaces\TransactionSystems.Aggregator.Domain.Interfaces.csproj" />
+    <ProjectReference Include="..\TransactionSystems.Aggregator.Domain.Observability\TransactionSystems.Aggregator.Domain.Observability.csproj" />
+    <ProjectReference Include="..\TransactionSystems.Aggregator.Domain.UnitOfWork\TransactionSystems.Aggregator.Domain.UnitOfWork.csproj" />
+  </ItemGroup>
+
+</Project>

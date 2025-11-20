@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AspNetCore.HealthChecks.SqlServer" Version="8.0.2" />
+		<PackageReference Include="Azure.Identity" Version="1.15.0" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.8" />
+		<PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="9.0.8" />
+		<PackageReference Include="AspNetCore.HealthChecks.UI" Version="8.0.1" />
+		<PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="8.0.1" />
+		<PackageReference Include="AspNetCore.HealthChecks.UI.InMemory.Storage" Version="8.0.1" />
+		<PackageReference Include="Microsoft.Identity.Client" Version="4.76.0" />
+	</ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TransactionSystems.Aggregator.Application.Models\TransactionSystems.Aggregator.Application.Models.csproj" />
+    <ProjectReference Include="..\TransactionSystems.Aggregator.Domain.Observability\TransactionSystems.Aggregator.Domain.Observability.csproj" />
+  </ItemGroup>
+
+</Project>

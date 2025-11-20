@@ -1,0 +1,17 @@
+CREATE TABLE tblTransactionCategory
+(
+	[Id] UNIQUEIDENTIFIER NOT NULL,
+	[Name] NVARCHAR(100) NOT NULL,
+	[Description] NVARCHAR(500) NULL,
+	[IconName] NVARCHAR(50) NULL,
+	[ColorCode] NVARCHAR(7) NULL,
+	[ParentCategoryId] UNIQUEIDENTIFIER NULL,
+	[CreatedAt] DATETIMEOFFSET NOT NULL,
+	[ModifiedAt] DATETIMEOFFSET NULL,
+	[ArchivedAt] DATETIMEOFFSET NOT NULL DEFAULT SYSDATETIMEOFFSET(),
+
+	CONSTRAINT PK_TransactionCategory PRIMARY KEY (Id),
+
+	INDEX IX_TransactionCategory_Name NONCLUSTERED (Name),
+	INDEX IX_TransactionCategory_ArchivedAt NONCLUSTERED (ArchivedAt)
+)

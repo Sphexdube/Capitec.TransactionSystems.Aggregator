@@ -1,0 +1,22 @@
+CREATE TABLE tblCustomerDataSource
+(
+	[Id] UNIQUEIDENTIFIER NOT NULL,
+	[CustomerId] UNIQUEIDENTIFIER NOT NULL,
+	[DataSourceId] UNIQUEIDENTIFIER NOT NULL,
+	[AccountNumber] NVARCHAR(50) NULL,
+	[AccountName] NVARCHAR(200) NULL,
+	[IsConnected] BIT NOT NULL DEFAULT 1,
+	[ConnectedDate] DATETIMEOFFSET NOT NULL DEFAULT SYSDATETIMEOFFSET(),
+	[LastSyncDate] DATETIMEOFFSET NULL,
+	[CreatedAt] DATETIMEOFFSET NOT NULL DEFAULT SYSDATETIMEOFFSET(),
+	[ModifiedAt] DATETIMEOFFSET NULL,
+	[RowVersion] ROWVERSION,
+
+	CONSTRAINT PK_CustomerDataSource PRIMARY KEY (Id),
+	CONSTRAINT FK_CustomerDataSource_Customer FOREIGN KEY (CustomerId) REFERENCES tblCustomer(Id) ON DELETE CASCADE,
+	CONSTRAINT FK_CustomerDataSource_DataSource FOREIGN KEY (DataSourceId) REFERENCES tblDataSource(Id) ON DELETE CASCADE,
+	CONSTRAINT UQ_CustomerDataSource_CustomerDataSource UNIQUE (CustomerId, DataSourceId),
+
+	INDEX IX_CustomerDataSource_CustomerId NONCLUSTERED (CustomerId),
+	INDEX IX_CustomerDataSource_DataSourceId NONCLUSTERED (DataSourceId)
+)

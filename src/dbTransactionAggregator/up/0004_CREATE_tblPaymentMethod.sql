@@ -1,0 +1,16 @@
+CREATE TABLE tblPaymentMethod
+(
+	[Id] UNIQUEIDENTIFIER NOT NULL,
+	[Name] NVARCHAR(100) NOT NULL,
+	[PaymentMethodType] NVARCHAR(50) NOT NULL,
+	[Description] NVARCHAR(500) NULL,
+	[CreatedAt] DATETIMEOFFSET NOT NULL DEFAULT SYSDATETIMEOFFSET(),
+	[ModifiedAt] DATETIMEOFFSET NULL,
+	[RowVersion] ROWVERSION,
+
+	CONSTRAINT PK_PaymentMethod PRIMARY KEY (Id),
+	CONSTRAINT UQ_PaymentMethod_Name UNIQUE (Name),
+
+	INDEX IX_PaymentMethod_Name NONCLUSTERED (Name),
+	INDEX IX_PaymentMethod_Type NONCLUSTERED (PaymentMethodType)
+)

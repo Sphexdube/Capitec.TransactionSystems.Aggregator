@@ -1,0 +1,35 @@
+CREATE TABLE tblTransaction
+(
+	[Id] UNIQUEIDENTIFIER NOT NULL,
+	[CustomerId] UNIQUEIDENTIFIER NOT NULL,
+	[DataSourceId] UNIQUEIDENTIFIER NOT NULL,
+	[CategoryId] UNIQUEIDENTIFIER NULL,
+	[PaymentMethodId] UNIQUEIDENTIFIER NULL,
+	[ExternalTransactionId] NVARCHAR(100) NULL,
+	[MerchantName] NVARCHAR(200) NOT NULL,
+	[Description] NVARCHAR(500) NULL,
+	[Amount] DECIMAL(18, 2) NOT NULL,
+	[Currency] NVARCHAR(3) NOT NULL DEFAULT 'ZAR',
+	[TransactionDate] DATETIMEOFFSET NOT NULL,
+	[PostedDate] DATETIMEOFFSET NULL,
+	[TransactionType] NVARCHAR(50) NOT NULL,
+	[TransactionStatus] NVARCHAR(50) NOT NULL,
+	[IsRecurring] BIT NOT NULL DEFAULT 0,
+	[Tags] NVARCHAR(MAX) NULL,
+	[CreatedAt] DATETIMEOFFSET NOT NULL DEFAULT SYSDATETIMEOFFSET(),
+	[ModifiedAt] DATETIMEOFFSET NULL,
+	[RowVersion] ROWVERSION,
+
+	CONSTRAINT PK_Transaction PRIMARY KEY (Id),
+	CONSTRAINT FK_Transaction_Customer FOREIGN KEY (CustomerId) REFERENCES tblCustomer(Id) ON DELETE CASCADE,
+	CONSTRAINT FK_Transaction_DataSource FOREIGN KEY (DataSourceId) REFERENCES tblDataSource(Id),
+	CONSTRAINT FK_Transaction_Category FOREIGN KEY (CategoryId) REFERENCES tblTransactionCategory(Id),
+	CONSTRAINT FK_Transaction_PaymentMethod FOREIGN KEY (PaymentMethodId) REFERENCES tblPaymentMethod(Id),
+
+	INDEX IX_Transaction_CustomerId NONCLUSTERED (CustomerId),
+	INDEX IX_Transaction_DataSourceId NONCLUSTERED (DataSourceId),
+	INDEX IX_Transaction_CategoryId NONCLUSTERED (CategoryId),
+	INDEX IX_Transaction_TransactionDate NONCLUSTERED (TransactionDate),
+	INDEX IX_Transaction_MerchantName NONCLUSTERED (MerchantName),
+	INDEX IX_Transaction_ExternalId NONCLUSTERED (ExternalTransactionId)
+)
